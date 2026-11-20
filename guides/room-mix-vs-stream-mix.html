@@ -45,12 +45,12 @@
           "name": "Can one mix work for both room and stream?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "It can be a starting point, but it rarely sounds right in both places at once. The room adds sound the stream never receives, so a copied mix leaves parts missing online. One console running two mixes, with the stream sent post fader, is the practical fix for a small team."
+            "text": "No. The room hears the band + the PA. The stream hears only the PA. If you send the room mix to the stream, the stream will be vocal-heavy and drum-light. Every time."
           }
         },
         {
           "@type": "Question",
-          "name": "What is a post fader stream bus?",
+          "name": "What is a post-fader stream bus?",
           "acceptedAnswer": {
             "@type": "Answer",
             "text": "It is a separate mix bus on the console that feeds the stream. Each channel is sent to it at its own level, and because the sends are post fader, the stream mix follows your main fader moves during the service. You set its balance at soundcheck and it tracks the service from there."
@@ -63,6 +63,14 @@
             "@type": "Answer",
             "text": "Listen on headphones while you set it, then record a short test with one song and one minute of speech and play it back on a phone. Do not judge it on the main speakers. The phone test shows you what an online listener actually hears, including thin parts and buried speech."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need a second volunteer for a second mix?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Post fader means you set the stream levels at soundcheck and the stream follows your room fader moves, so one volunteer mixes once. When you push a singer up in the room, the stream rises by the same amount from its own starting level, and you run the service from the main faders as usual."
+          }
         }
       ]
     }
@@ -70,6 +78,38 @@
 }
 </script>
 <link rel="stylesheet" href="../style.css">
+<style>
+.mix-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:0 0 8px}
+.mix-box{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:18px 20px}
+.mix-box h3{margin-top:0;color:var(--gold-light);font-size:15px;letter-spacing:.06em;text-transform:uppercase}
+.mix-box .big{font-size:19px;font-weight:700;line-height:1.45}
+.mix-box ul{margin-bottom:0}
+@media (max-width:640px){.mix-grid{grid-template-columns:1fr}}
+.warning{background:var(--surface2);border-left:4px solid var(--gold);border-radius:8px;padding:16px 20px;margin:24px 0}
+.warning p{margin:0}
+.warning .warn-title{font-weight:800;color:var(--gold-light);margin:0 0 8px}
+.balance{background:var(--surface);border:1px dashed var(--gold);border-radius:var(--radius);padding:20px;margin:24px 0}
+.balance h3{margin-top:0}
+.balance-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px 28px}
+@media (max-width:640px){.balance-grid{grid-template-columns:1fr}}
+.balance fieldset{border:0;padding:0;margin:0}
+.balance legend{font-weight:700;color:var(--gold-light);padding:0}
+.balance label{display:block;font-size:14px;font-weight:600;margin-top:12px}
+.balance-input{width:100%;background:transparent;border:0;border-bottom:1px dashed var(--muted);padding:5px 0;color:var(--text);font:inherit;font-size:15px;outline:none}
+.balance-input:focus{border-bottom:1px solid var(--gold)}
+.balance-textarea{width:100%;min-height:70px;background:transparent;border:1px dashed var(--muted);border-radius:6px;padding:8px;color:var(--text);font:inherit;font-size:15px;outline:none;resize:vertical;margin-top:6px}
+.balance-textarea:focus{border:1px solid var(--gold)}
+.checklist ul.checks{list-style:none;padding-left:0}
+.checklist ul.checks li{padding-left:0}
+.checklist ul.checks li:before{content:none}
+.checklist label{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.checklist input[type="checkbox"]{width:19px;height:19px;flex-shrink:0;margin-top:3px;accent-color:var(--gold)}
+.check-count{display:inline-block;background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:6px 12px;font-size:14px;font-weight:700;color:var(--gold-light)}
+.btn-clear{background:transparent;color:var(--text);border:1px solid var(--border);font-weight:700;padding:11px 18px;border-radius:8px;cursor:pointer;font-size:15px;margin-left:10px}
+.btn-clear:hover{border-color:var(--gold);color:var(--gold-light)}
+button.button{border:0;cursor:pointer;font-size:15px}
+@media print{header.site,.cta,.check-actions,nav.main{display:none}.checklist{break-before:page}}
+</style>
 </head>
 <body>
 <header class="site">
@@ -87,21 +127,40 @@
 <main>
 <h1 class="article">Room mix vs stream mix: why your church livestream sounds different</h1>
 <p class="meta">Guide 4. For volunteers and small tech teams.</p>
-<p class="byline">By Isaac Walton, IDW Entertainment Technology, New York, NY. Updated Nov 20, 2026.</p>
-<p class="answer">The room mix and the stream mix sound different because the room helps the room mix. People in the room hear direct sound, reflections and singing around them. People online hear only the feed, so the stream needs its own balance, with speech clear and quiet room parts raised.</p>
+<p class="byline">By Isaac Walton, IDW Entertainment Technology, New York, NY. CTS Certified AV Engineer, Dante Level 2, Q-SYS Level 1, Yamaha QL1 experience. Updated Nov 20, 2026.</p>
+<p class="answer"><strong>The rule to remember:</strong> The room hears the band + the PA. The stream hears only the PA. If you send the room mix to the stream, the stream will be vocal-heavy and drum-light. Every time.</p>
 <p>You play back the recording of Sunday and it sounds like a different service. In the room the worship felt full. On the recording the piano has almost gone, the drums sound small, and the voices sit on top of everything. Nothing broke. You are hearing the difference between two mixes asked to do two different jobs, and only one of them was actually built.</p>
 <h2>What the room adds for free</h2>
 <p>People in the room hear far more than the speakers give them. They hear the drum kit itself, the piano from the instrument, the guitar amp from the stage, and the congregation singing around them. Sound bounces off the walls and ceiling too, filling gaps and making everything feel warmer. The room is, in effect, mixing alongside you. A wise room mix leans on that help, keeping loud instruments lower in the speakers because the room already supplies them.</p>
 <h2>What the stream hears</h2>
 <p>People online hear only the feed, and nothing else. There is no drum kit in their living room, no congregation singing beside them, and no wall reflections filling the gaps. If an instrument was quiet in the mix because it was loud in the room, it is simply missing for them. Speech that felt clear in the room can sound distant, and effects that sounded gentle in a big space can sound washy on a phone speaker.</p>
+<div class="mix-grid">
+<div class="mix-box">
+<h3>Room hears</h3>
+<p class="big">Direct sound: drums, piano, amp, congregation + PA speakers + room reflections</p>
+<p>The room itself fills in what the speakers leave out.</p>
+</div>
+<div class="mix-box">
+<h3>Stream hears</h3>
+<p class="big">PA only</p>
+<ul>
+<li>No direct sound</li>
+<li>No congregation beside you</li>
+<li>No room reflections</li>
+</ul>
+</div>
+</div>
+<p class="meta">Figure: why a copy of the room mix can never sound right online.</p>
 <h2>Side by side: what each mix needs</h2>
+<p>Use this table at soundcheck. The room column is what you already do. The stream column is what to push or pull in the stream aux only, never in the room.</p>
 <table>
-<tr><th>Part</th><th>Room mix needs</th><th>Stream mix needs</th></tr>
-<tr><td>Drums</td><td>Often less in the speakers, because the kit is loud in the room on its own</td><td>More in the feed, at a controlled level, or the beat and energy vanish online</td></tr>
-<tr><td>Piano and keys</td><td>Enough to support singing without covering the voices in the room</td><td>More than you expect, because online listeners hear no sound from the instrument itself</td></tr>
-<tr><td>Voices</td><td>Balanced against the room, with the congregation helping the singing feel full</td><td>Clear and steady, sitting on top of the music, because words carry the service online</td></tr>
-<tr><td>Speech</td><td>Clear above the room noise, with the room adding some natural warmth</td><td>The clearest thing in the mix, with less low end and less effect, tested on a phone</td></tr>
-<tr><td>Effects</td><td>Reverb can be generous, because the room blends it naturally</td><td>Reverb pulled back, because effects build up fast on small speakers and blur speech</td></tr>
+<tr><th>Mix point</th><th>Room</th><th>Stream</th></tr>
+<tr><td><strong>Drums</strong></td><td>Often less in the speakers, because the kit is loud in the room on its own</td><td>Push up in the stream aux, at a controlled level, or the beat and energy vanish online</td></tr>
+<tr><td><strong>Piano and keys</strong></td><td>Enough to support singing without covering the voices in the room</td><td>Push up, more than you expect, because online listeners hear no sound from the instrument itself</td></tr>
+<tr><td><strong>Voices</strong></td><td>Balanced against the room, with the congregation helping the singing feel full</td><td>Keep on top and steady, because words carry the service online, but do not bury the band</td></tr>
+<tr><td><strong>Speech</strong></td><td>Clear above the room noise, with the room adding some natural warmth</td><td>The clearest thing in the mix, with less low end and less effect, tested on a phone</td></tr>
+<tr><td><strong>Effects and reverb</strong></td><td>Reverb can be generous, because the room blends it naturally</td><td>Pull back 30 to 50% compared with the room, because effects build up fast on small speakers and blur speech</td></tr>
+<tr><td><strong>Congregation</strong></td><td>Heard naturally all around you</td><td>Add room mics, sent to the stream only, because without them worship sounds empty online</td></tr>
 </table>
 <h2>Why copying the main mix fails online, point by point</h2>
 <ul>
@@ -112,27 +171,55 @@
 <li>Low end behaves differently on phones and earbuds, so a full room low end turns to mud or vanishes.</li>
 </ul>
 <h2>The practical middle path for a one volunteer team</h2>
-<p>Most small churches do not have two sound volunteers, and this guide does not pretend otherwise. The middle path is one console and two mixes. Build the room mix as you do now. Then build a second mix for the stream on its own bus, sent post fader. Post fader means the stream mix follows your main fader moves, so when you bring a singer up for the room, the stream rises too, but each channel keeps its own stream level set in advance. You set the stream balance carefully at soundcheck, then run the service from the main faders as usual. The setup steps are covered in the livestream audio guide linked below, and where the split happens in the full path is covered in the signal chain guide linked below.</p>
+<p>Most small churches do not have two sound volunteers, and this guide does not pretend otherwise. The middle path is one console and two mixes. Build the room mix as you do now. Then build a second mix for the stream on its own bus, sent post fader.</p>
+<p><strong>Post fader means you only mix once.</strong> Set each channel stream level at soundcheck. During the service, when you push a singer up in the room, they go up in the stream too, by the same amount, from their stream starting point. You do not have to mix two services at once.</p>
+<div class="warning">
+<p class="warn-title">Warning</p>
+<p>If you mute a channel in the room, it mutes in the stream too. That is usually what you want, except for room mics. Keep room mics on a separate send so muting a room channel does not kill them online.</p>
+</div>
+<p>The setup steps are covered in the <a href="why-church-livestream-audio-sounds-bad.html">livestream audio guide</a>, where the split happens in the full path is covered in the <a href="signal-chain-map-small-church.html">signal chain guide</a>, and gain is covered in the <a href="church-sound-gain-structure-for-volunteers.html">gain structure guide</a>.</p>
+<h2>Two things most guides skip</h2>
+<div class="card">
+<h3>1. Room mics: add air, not echo</h3>
+<p>Add 1 to 2 room mics high in the room, sent only to the stream, not to the PA. Without them, sung worship sounds empty and prayer sounds like it is happening in a closet. Keep them low. You want air and singing, not room echo.</p>
+</div>
+<div class="card">
+<h3>2. Gentle compression: on the stream bus only</h3>
+<p>Put gentle compression on the stream bus, not the room. It keeps quiet prayer audible on a phone and loud worship from clipping the encoder. Aim for a steady level, with no red on the stream meter and no big jumps between speech and music.</p>
+</div>
 <h2>How to judge each mix</h2>
 <p>Judge the room mix in the room, by walking the seats. Judge the stream mix on headphones, and then on a phone, because that is where your online listeners live. Never judge the stream from the main speakers. Keep a short written balance note for each mix: which parts are high, which are low, and why. That note stops the two mixes slowly drifting back into one, and saves the next volunteer from starting from zero.</p>
-<div class="checklist">
-<h2>Checklist: room mix and stream mix</h2>
-<ul>
-<li>Name which mix you are adjusting before you touch anything</li>
-<li>Judge the room mix in the room, and the stream mix on headphones</li>
-<li>Check the stream balance on a phone before the service</li>
-<li>Keep speech the clearest part of the stream mix</li>
-<li>Keep a short written balance note for each mix</li>
-</ul>
+<div class="balance">
+<h3>Balance note: fill in at soundcheck</h3>
+<div class="balance-grid">
+<fieldset>
+<legend>Room</legend>
+<label>Drums <input class="balance-input" type="text" aria-label="Room drums"></label>
+<label>Piano <input class="balance-input" type="text" aria-label="Room piano"></label>
+<label>Voices <input class="balance-input" type="text" aria-label="Room voices"></label>
+<label>Speech <input class="balance-input" type="text" aria-label="Room speech"></label>
+</fieldset>
+<fieldset>
+<legend>Stream</legend>
+<label>Drums <input class="balance-input" type="text" aria-label="Stream drums"></label>
+<label>Piano <input class="balance-input" type="text" aria-label="Stream piano"></label>
+<label>Voices <input class="balance-input" type="text" aria-label="Stream voices"></label>
+<label>Speech <input class="balance-input" type="text" aria-label="Stream speech"></label>
+<label>Room mics <input class="balance-input" type="text" aria-label="Stream room mics"></label>
+</fieldset>
+</div>
+<label>What I changed and why: <textarea class="balance-textarea" aria-label="What I changed and why"></textarea></label>
 </div>
 <section class="faq">
 <h2>Frequently asked questions</h2>
 <h3>Can one mix work for both room and stream?</h3>
-<p>It can be a starting point, but it rarely sounds right in both places at once. The room adds sound the stream never receives, so a copied mix leaves parts missing online. One console running two mixes, with the stream sent post fader, is the practical fix for a small team.</p>
-<h3>What is a post fader stream bus?</h3>
+<p>No. The room hears the band + the PA. The stream hears only the PA. If you send the room mix to the stream, the stream will be vocal-heavy and drum-light. Every time.</p>
+<h3>What is a post-fader stream bus?</h3>
 <p>It is a separate mix bus on the console that feeds the stream. Each channel is sent to it at its own level, and because the sends are post fader, the stream mix follows your main fader moves during the service. You set its balance at soundcheck and it tracks the service from there.</p>
 <h3>How do I judge the stream mix?</h3>
 <p>Listen on headphones while you set it, then record a short test with one song and one minute of speech and play it back on a phone. Do not judge it on the main speakers. The phone test shows you what an online listener actually hears, including thin parts and buried speech.</p>
+<h3>Do I need a second volunteer for a second mix?</h3>
+<p>No. Post fader means you set the stream levels at soundcheck and the stream follows your room fader moves, so one volunteer mixes once. When you push a singer up in the room, the stream rises by the same amount from its own starting level, and you run the service from the main faders as usual.</p>
 </section>
 <section class="related">
 <h2>Related guides</h2>
@@ -148,6 +235,32 @@
 <p>IDW Entertainment Technology offers a free 15 minute Room and Stream Health Check call for churches in the New York metro area. We talk through your room, your stream, and the one problem that keeps coming back, and we tell you plainly what we would fix first. No pressure and no obligation.</p>
 <a class="button" href="https://idwent.com/#contact">Book a free health check</a>
 </section>
+<div class="checklist" id="sunday-checklist">
+<h2>Printable Sunday checklist</h2>
+<p><span class="check-count" id="check-count" aria-live="polite">0 of 10 checked</span></p>
+<ul class="checks">
+<li><label><input type="checkbox" class="sunday-check"> <span>Say it out loud before you touch anything: I am adjusting the ___ mix.</span></label></li>
+<li><label><input type="checkbox" class="sunday-check"> <span>Room mix judged by walking the seats</span></label></li>
+<li><label><input type="checkbox" class="sunday-check"> <span>Stream mix judged on headphones, then on a phone</span></label></li>
+<li><label><input type="checkbox" class="sunday-check"> <span>Speech is the clearest thing in the stream mix</span></label></li>
+<li><label><input type="checkbox" class="sunday-check"> <span>Drums and piano pushed up in the stream aux only</span></label></li>
+<li><label><input type="checkbox" class="sunday-check"> <span>Reverb pulled back 30 to 50% in the stream compared with the room</span></label></li>
+<li><label><input type="checkbox" class="sunday-check"> <span>Room mics up low, to the stream only, not to the PA</span></label></li>
+<li><label><input type="checkbox" class="sunday-check"> <span>Stream meter steady, no red</span></label></li>
+<li><label><input type="checkbox" class="sunday-check"> <span>Test recording, 1 song and 1 minute of speech, played back on a phone</span></label></li>
+<li><label><input type="checkbox" class="sunday-check"> <span>Balance note written for both mixes</span></label></li>
+</ul>
+<p class="check-actions"><button type="button" class="button" id="check-all">Check all</button><button type="button" class="btn-clear" id="clear-all">Clear all checks</button></p>
+<h3>If it sounds wrong online, check in this order:</h3>
+<ol>
+<li>Is speech clear?</li>
+<li>Are drums and piano up in the stream?</li>
+<li>Is reverb too high in the stream?</li>
+<li>Are room mics too low or too high?</li>
+<li>Is the stream clipping?</li>
+</ol>
+<p>Judge the stream on headphones, then on a phone, never from the main speakers.</p>
+</div>
 </main>
 </div>
 <footer class="site">
@@ -156,5 +269,26 @@
 <p class="author-note">About the author: Isaac Walton is a CTS certified AV engineer, Dante Level 2 and Q-SYS Level 1, with Yamaha QL1 experience.</p>
 </div>
 </footer>
+<script>
+(function () {
+  var boxes = document.querySelectorAll(".sunday-check");
+  var count = document.getElementById("check-count");
+  function update() {
+    var n = 0;
+    boxes.forEach(function (b) { if (b.checked) n++; });
+    count.textContent = n + " of " + boxes.length + " checked";
+  }
+  boxes.forEach(function (b) { b.addEventListener("change", update); });
+  document.getElementById("check-all").addEventListener("click", function () {
+    boxes.forEach(function (b) { b.checked = true; });
+    update();
+  });
+  document.getElementById("clear-all").addEventListener("click", function () {
+    boxes.forEach(function (b) { b.checked = false; });
+    update();
+  });
+  update();
+})();
+</script>
 </body>
 </html>
