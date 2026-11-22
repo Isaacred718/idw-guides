@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>OBS Audio Levels for Church Livestreams: Where Your Meters Should Sit | IDW Guides</title>
-<meta name="description" content="In OBS, loud peaks should sit around minus 12 to minus 6 dBFS, speech should live in the yellow, and constant red means distortion. A plain guide for church stream volunteers.">
+<title>Guide 8: OBS Audio Levels for Church Livestreams: Where Your Meters Should Sit | IDW Guides</title>
+<meta name="description" content="In OBS, aim for loud peaks around minus 12 to minus 6 dBFS, with speech sitting mostly in the yellow zone of the meter and never in constant red. A plain guide for church stream volunteers.">
 <link rel="canonical" href="https://guides.idwent.com/guides/obs-audio-levels-for-church-streams.html">
-<meta property="og:title" content="OBS Audio Levels for Church Livestreams: Where Your Meters Should Sit | IDW Guides">
-<meta property="og:description" content="In OBS, loud peaks should sit around minus 12 to minus 6 dBFS, speech should live in the yellow, and constant red means distortion. A plain guide for church stream volunteers.">
+<meta property="og:title" content="Guide 8: OBS Audio Levels for Church Livestreams: Where Your Meters Should Sit | IDW Guides">
+<meta property="og:description" content="In OBS, aim for loud peaks around minus 12 to minus 6 dBFS, with speech sitting mostly in the yellow zone of the meter and never in constant red. A plain guide for church stream volunteers.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://guides.idwent.com/guides/obs-audio-levels-for-church-streams.html">
 <script type="application/ld+json">
@@ -16,8 +16,8 @@
   "@graph": [
     {
       "@type": "Article",
-      "headline": "OBS audio levels for church livestreams: where your meters should sit",
-      "description": "In OBS, loud peaks should sit around minus 12 to minus 6 dBFS, speech should live in the yellow, and constant red means distortion. A plain guide for church stream volunteers.",
+      "headline": "Guide 8: OBS Audio Levels for Church Livestreams: Where Your Meters Should Sit",
+      "description": "In OBS, aim for loud peaks around minus 12 to minus 6 dBFS, with speech sitting mostly in the yellow zone of the meter and never in constant red. A plain guide for church stream volunteers.",
       "author": {
         "@type": "Person",
         "name": "Isaac Walton",
@@ -85,25 +85,46 @@
 </header>
 <div class="wrap">
 <main>
-<h1 class="article">OBS audio levels for church livestreams: where your meters should sit</h1>
+<h1 class="article">Guide 8: OBS Audio Levels for Church Livestreams: Where Your Meters Should Sit</h1>
 <p class="meta">Guide 8. For volunteers and small tech teams.</p>
 <p class="byline">By Isaac Walton, IDW Entertainment Technology, New York, NY. Updated Nov 20, 2026.</p>
 <p class="answer">In OBS, aim for loud peaks around minus 12 to minus 6 dBFS, with speech sitting mostly in the yellow zone of the meter and never in constant red. Constant red means distortion. Mostly green and quiet means viewers will struggle to hear speech on phones.</p>
 <p>This guide answers one question: what should the audio meters in OBS read during a church service? The short answer is at the top of this page. The rest explains what the meter shows, why the level arriving from the console matters more than anything inside OBS, and how to run a two minute check before the service.</p>
+<h2>The one rule to remember</h2>
+<p><strong>Yellow is where you live. Red is where you visit. Green is too quiet to stay.</strong></p>
+<p>If you remember nothing else, remember this. It keeps speech clear on phones without distortion.</p>
 <h2>What the OBS meter shows, and what the colours mean</h2>
-<p>The meter in the OBS audio mixer shows the level OBS is receiving, measured in dBFS, where zero at the top is the loudest digital level possible. Above zero is not louder, it is broken: the signal clips and distorts, and no later step can undo it. Green is the safe lower range. Yellow is the working range where speech and music should spend most of their time. Red is the danger range, fine to touch on the loudest peaks, but never a place to sit.</p>
-<h2>The target range, in plain terms</h2>
-<p>Aim for loud peaks around minus 12 to minus 6 dBFS. The loudest parts of a song or a strong voice should land in the upper yellow, with a little room above them. Normal speech should sit in the yellow most of the time. If everything lives in the green around minus 30 or minus 20, viewers turn their phones up for the sermon and then get blasted by a song. If the meter sits in constant red, the stream sounds harsh even when the room sounds fine, because the distortion happens in the digital chain, where nobody in the room can hear it.</p>
-<h2>The chain before OBS sets what OBS receives</h2>
-<p>OBS can only work with what the console sends it. The stream bus sets the level that arrives at the computer, through USB, an audio interface, or a Dante feed where one is installed. If that bus is too quiet, raising things in OBS just raises noise with the signal. If it is too hot, the signal may already be distorted before OBS sees it. Set it in order: good gain on each channel first, then a sensible stream bus level, then check what OBS shows. The gain guide and livestream audio guide linked below cover those steps.</p>
-<h2>Desktop audio traps</h2>
+<p>The meter in the OBS audio mixer shows the level OBS is receiving, measured in dBFS, where zero at the top is the loudest digital level possible. Above zero is not louder, it is broken: the signal clips and distorts, and no later step can undo it.</p>
 <ul>
-<li>Double audio: the console feed and the computer desktop audio are both on, so the stream hears the service twice with a slight delay, which sounds like an echoey mess.</li>
-<li>Wrong input device: OBS is listening to a webcam microphone or the computer built in microphone instead of the console feed, so the stream sounds distant and roomy.</li>
+<li><strong>Green</strong> is the safe lower range.</li>
+<li><strong>Yellow</strong> is the working range where speech and music should spend most of their time.</li>
+<li><strong>Red</strong> is the danger range, fine to touch on the loudest peaks, but never a place to sit.</li>
+</ul>
+<h2>The target range, in plain terms</h2>
+<p>Aim for loud peaks around minus 12 to minus 6 dBFS. The loudest parts of a song or a strong voice should land in the upper yellow, with a little room above them. Normal speech should sit in the yellow most of the time.</p>
+<p>If everything lives in the green around minus 30 or minus 20, viewers turn their phones up for the sermon and then get blasted by a song. If the meter sits in constant red, the stream sounds harsh even when the room sounds fine, because the distortion happens in the digital chain, where nobody in the room can hear it.</p>
+<h2>The chain before OBS sets what OBS receives</h2>
+<p>OBS can only work with what the console sends it. The stream bus sets the level that arrives at the computer, through USB, an audio interface, or a Dante feed where one is installed.</p>
+<p>If that bus is too quiet, raising things in OBS just raises noise with the signal. If it is too hot, the signal may already be distorted before OBS sees it.</p>
+<p>Set it in order:</p>
+<ol>
+<li>Good gain on each channel first.</li>
+<li>Then a sensible stream bus level.</li>
+<li>Then check what OBS shows.</li>
+</ol>
+<p>The gain guide and livestream audio guide linked below cover those steps.</p>
+<h2>Desktop audio traps</h2>
+<p>Two mistakes sound similar but have different fixes.</p>
+<ul>
+<li><strong>Double audio:</strong> the console feed and the computer desktop audio are both on, so the stream hears the service twice with a slight delay, which sounds like an echoey mess.</li>
+<li><strong>Wrong input device:</strong> OBS is listening to a webcam microphone or the computer built in microphone instead of the console feed, so the stream sounds distant and roomy.</li>
 </ul>
 <p>The fix is the same habit: before the service, confirm the one OBS input is the console stream feed, desktop audio is off unless you need it for videos, and monitoring is off for the stream feed.</p>
 <h2>Filters in OBS: what a limiter is for, and what filters cannot fix</h2>
-<p>OBS filters change the audio of a source inside OBS. A limiter is a safety net: it catches peaks above a ceiling you set and pulls them down fast, so a sudden shout does not clip the stream. Set it as the last filter, a little below zero. If it works constantly, your levels before it are too hot. A compressor can even out speech, and a gain filter can lift a slightly quiet source. But no filter can fix bad gain at the console or remove distortion that already happened. Filters polish a good signal. They do not repair a broken chain.</p>
+<p>OBS filters change the audio of a source inside OBS.</p>
+<p>A limiter is a safety net: it catches peaks above a ceiling you set and pulls them down fast, so a sudden shout does not clip the stream. Set it as the last filter, a little below zero. If it works constantly, your levels before it are too hot.</p>
+<p>A compressor can even out speech, and a gain filter can lift a slightly quiet source.</p>
+<p>But no filter can fix bad gain at the console or remove distortion that already happened. Filters polish a good signal. They do not repair a broken chain.</p>
 <h2>A two minute pre service level check</h2>
 <ol>
 <li>Confirm the OBS input is the console stream feed and nothing else.</li>
@@ -114,7 +135,7 @@
 </ol>
 <p>Two minutes, once, with real content. That routine catches the wrong input, the double audio, the quiet bus, and the constant red before a single viewer does, and it gives the volunteer a calm start instead of a panicked first song.</p>
 <div class="checklist">
-<h2>Checklist: OBS audio levels</h2>
+<h2>Sunday checklist: OBS audio levels</h2>
 <ul>
 <li>Confirm the OBS input is the console stream feed and nothing else</li>
 <li>Keep loud peaks around minus 12 to minus 6 dBFS</li>
@@ -124,7 +145,7 @@
 </ul>
 </div>
 <section class="faq">
-<h2>Frequently asked questions</h2>
+<h2>Questions volunteers actually ask next</h2>
 <h3>Why is my OBS audio too quiet at minus 20 dB?</h3>
 <p>Because minus 20 dBFS leaves a lot of unused headroom, so viewers must turn their devices up a long way to hear speech clearly. The usual cause is a quiet stream bus at the console, not OBS itself. Raise the level at the console stream bus first, then check that loud peaks sit around minus 12 to minus 6 dBFS in OBS.</p>
 <h3>Can OBS filters fix bad gain?</h3>

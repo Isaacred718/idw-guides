@@ -3,11 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Signal Chain Map for a Small Church | IDW Guides</title>
-<meta name="description" content="A plain map of how sound travels in a small church: source, microphone, cable or wireless, console, outputs, speakers, and stream. Use it to find faults fast.">
+<title>Guide 3: Signal Chain Map for a Small Church | IDW Guides</title>
+<meta name="description" content="The signal chain is the path sound takes in order, from the source through the console to the speakers and the stream. When something fails, check each stage in order instead of guessing.">
 <link rel="canonical" href="https://guides.idwent.com/guides/signal-chain-map-small-church.html">
-<meta property="og:title" content="Signal Chain Map for a Small Church | IDW Guides">
-<meta property="og:description" content="A plain map of how sound travels in a small church: source, microphone, cable or wireless, console, outputs, speakers, and stream. Use it to find faults fast.">
+<meta property="og:title" content="Guide 3: Signal Chain Map for a Small Church | IDW Guides">
+<meta property="og:description" content="The signal chain is the path sound takes in order, from the source through the console to the speakers and the stream. When something fails, check each stage in order instead of guessing.">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://guides.idwent.com/guides/signal-chain-map-small-church.html">
 <script type="application/ld+json">
@@ -16,8 +16,8 @@
   "@graph": [
     {
       "@type": "Article",
-      "headline": "Signal chain map for a small church",
-      "description": "A plain map of how sound travels in a small church: source, microphone, cable or wireless, console, outputs, speakers, and stream. Use it to find faults fast.",
+      "headline": "Guide 3: Signal Chain Map for a Small Church",
+      "description": "The signal chain is the path sound takes in order, from the source through the console to the speakers and the stream. When something fails, check each stage in order instead of guessing.",
       "author": {
         "@type": "Person",
         "name": "Isaac Walton",
@@ -63,6 +63,14 @@
             "@type": "Answer",
             "text": "The stream is one of the console outputs, alongside the room and the monitors. It takes its own bus from the console to the streaming computer or encoder, by cable, USB, or a Dante feed where one is installed. If the room sounds fine but the stream is silent, check that output path and the software input setting first."
           }
+        },
+        {
+          "@type": "Question",
+          "name": "Why does the meter show signal but we hear nothing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "The fault is downstream of the channel. Check the output path: main fader and mute, any processor or amplifier mute, speaker connections, and amplifier power."
+          }
         }
       ]
     }
@@ -85,21 +93,24 @@
 </header>
 <div class="wrap">
 <main>
-<h1 class="article">Signal chain map for a small church</h1>
+<h1 class="article">Guide 3: Signal Chain Map for a Small Church</h1>
 <p class="meta">Guide 3 of 3 core guides. One path, in order, in plain language.</p>
 <p class="byline">By Isaac Walton, IDW Entertainment Technology, New York, NY. Updated Nov 20, 2026.</p>
 <p class="answer">The signal chain is the path sound takes in order: source, microphone, cable or wireless link, console input and channel, console outputs, then speakers for the room and the streaming computer for online listeners. When something fails, check each stage in order instead of guessing.</p>
-<p>When a microphone goes silent or a hum appears five minutes before the service, panic makes troubleshooting slower. A signal chain map fixes that. It is just the path sound takes, in order, from the person speaking to the people listening, in the room and online.</p>
-<p>Learn the path once and most problems get smaller. You stop guessing and start checking, one stage at a time.</p>
+<p>When a microphone goes silent or a hum appears five minutes before the service, panic makes troubleshooting slower. A signal chain map fixes that. Learn the path once and most problems get smaller. You stop guessing and start checking, one stage at a time.</p>
+<h2>The one rule to remember</h2>
+<p><strong>Follow the sound, one step at a time.</strong></p>
+<p>Sound moves in one direction, from the person speaking to the people listening. Every problem lives at one step in this path. Find the step and you find the fix.</p>
 <h2>The map</h2>
-<div class="diagram">Source (voice, instrument)
-  -> Microphone or DI box
-  -> Cable, or wireless transmitter and receiver
-  -> Stage box or console input
-  -> Console channel: gain, EQ, fader
-  -> Console outputs: main, monitors, stream bus
-  -> Amplifiers and speakers (room)
-  -> Streaming computer or encoder (online)</div>
+<ol>
+<li><strong>Source:</strong> voice, instrument</li>
+<li><strong>Pickup:</strong> microphone or DI box</li>
+<li><strong>Link:</strong> cable, or wireless transmitter and receiver</li>
+<li><strong>Console input:</strong> stage box or console input</li>
+<li><strong>Console channel:</strong> gain, EQ, fader</li>
+<li><strong>Console outputs:</strong> main, monitors, stream bus</li>
+<li><strong>Listeners:</strong> amplifiers and speakers for the room, streaming computer or encoder for online</li>
+</ol>
 <p>Some churches run parts of this path over a digital network such as Dante, where one network cable carries many channels between a stage box and the console. The order is the same. Only the cable changes.</p>
 <h2>Each stage, in plain terms</h2>
 <h3>1. Source</h3>
@@ -116,6 +127,9 @@
 <p>The last step for the room. If the console meter shows signal but the room hears nothing, check amplifier power, speaker connections, and any processor or mute between the console and the speakers.</p>
 <h3>7. Streaming computer or encoder</h3>
 <p>For online listeners, the chain continues: console stream output, cable or USB or Dante connection, streaming software input, and the platform. Check each handoff. The most common fault is simple: the streaming software is listening to the wrong input.</p>
+<h2>Two things volunteers often confuse</h2>
+<p><strong>Channel vs output path.</strong> A channel is one source, like one mic. An output path is one destination, like the room or the stream. If one mic is silent everywhere, check its channel. If everything is fine in the room but the stream is silent, check the stream output path.</p>
+<p><strong>Cable fault vs wireless fault.</strong> A cable fault is usually crackle, hum, or sound that cuts out when you move the cable. Fix it by swapping the cable. A wireless fault is usually no signal at the receiver, a low battery, or a wrong frequency. Fix it by checking batteries, matching the transmitter and receiver, and checking the receiver meters.</p>
 <h2>How to troubleshoot with the map</h2>
 <p>Work the path in order and change one thing at a time.</p>
 <ol>
@@ -126,7 +140,7 @@
 <li>Write down what fixed it. The next volunteer should not have to solve the same fault from scratch.</li>
 </ol>
 <div class="checklist">
-<h2>Checklist: when something stops working</h2>
+<h2>Sunday checklist: when something stops working</h2>
 <ul>
 <li>Say exactly what is affected: one channel or all, room or stream or both</li>
 <li>Check the source is producing sound at a normal level</li>
@@ -134,19 +148,21 @@
 <li>Swap the cable with a known good cable</li>
 <li>For wireless, check receiver signal and that transmitter and receiver match</li>
 <li>Check the console channel: input, gain, mute, fader, output assignment</li>
-<li>Check the specific output path that is failing, room, monitor, or stream</li>
+<li>Check the specific output path that is failing: room, monitor, or stream</li>
 <li>For stream faults, confirm the software is set to the correct input</li>
 <li>Log the fault and the fix in a notebook at the sound desk</li>
 </ul>
 </div>
 <section class="faq">
-<h2>Frequently asked questions</h2>
+<h2>Questions volunteers actually ask next</h2>
 <h3>What is the signal chain in a church sound system?</h3>
 <p>It is the path sound takes in order: the source, the microphone or DI box, the cable or wireless link, the console input and channel, the console outputs, then the speakers for the room and the streaming computer for online listeners. Every fault lives at one stage of that path.</p>
 <h3>Where do I check first when there is no sound?</h3>
 <p>Start by naming what is affected: one channel or everything, and room, monitors, or stream. Then check the simple things in order, from the source forward: is the source making sound, is the microphone on, is the cable good, and is the channel unmuted with its fader up and the right input selected.</p>
 <h3>How does the stream fit into the chain?</h3>
 <p>The stream is one of the console outputs, alongside the room and the monitors. It takes its own bus from the console to the streaming computer or encoder, by cable, USB, or a Dante feed where one is installed. If the room sounds fine but the stream is silent, check that output path and the software input setting first.</p>
+<h3>Why does the meter show signal but we hear nothing?</h3>
+<p>The fault is downstream of the channel. Check the output path: main fader and mute, any processor or amplifier mute, speaker connections, and amplifier power.</p>
 </section>
 <section class="related">
 <h2>Related guides</h2>
